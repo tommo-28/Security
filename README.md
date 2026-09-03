@@ -3,7 +3,7 @@
 ## Immer zuerst (3 Schritte)
 1. **Was ist es?** 
    
-   → Dateityp: `file` yourFile.encrypted (-> z.b. openssl) / `xxd` yourFile.encrypted`|head -n 20` / `binwalk -E` yourFile.encrypted
+   → Dateityp: `file` yourFile.encrypted / `xxd` yourFile.encrypted`|head -n 20` / `binwalk -E` yourFile.encrypted
    
    → Hashtyp raten: `hashid -m` "Hash" (Ausgabe z.b.: SHA-1 Hashcat Mode: 100) / `hashid -m` hash.txt / `hashid -mj` hash.txt (-j zeigt an ob der hash ein Salt verwendet)
 2. **Hash rausholen** → `*2john`-Tool (pdf2john, 7z2john, keepass2john, iwork2john, office2john…) 
@@ -38,6 +38,8 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 | Parameter | Modus / Wert | Name | Wann verwendest du diesen Modus? |
 | :--- | :--- | :--- | :--- |
 | **`-m`** (Hash-Typ) | **`0`** | MD5 | Für sehr alte Linux-Systeme, Legacy-Datenbanken oder schnelle Datei-Prüfsummen. |
+| | **`10`** | md5($hash.$salt) | Wenn der Server zuerst das Passwort nimmt und das Salz hinten anhängt. |
+| | **`20`** | md5($salt.$hash) | Wenn das Salz vor dem Passwort steht (sehr beliebt bei Web-Anwendungen). |
 | | **`100`** | SHA-1 | Für ältere Git-Repositories, ältere Passwörter (z. B. MySQL 3/4) oder veraltete Zertifikate. |
 | | **`1400`** | SHA-256 | Der moderne Standard für Standalone-Hashes, Bitcoins, TLS/SSL und viele Datei-Signaturen. |
 | | **`1800`** | sha512crypt | **Der Klassiker für Uni-Prüfungen:** Standard für moderne Linux `/etc/shadow`-Dateien. |
@@ -69,6 +71,7 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 <br>
 
 ## Achtung Skript!
+- Salt + Passwort + Salt -> skript, hashcat kann nur salt davor oder salt danach, nicht doppelt
 - verschachtelte Hashes wie SHA256(MD5())
 - dynamisches Salt Hash = SHA256(Passwort + Username) -> salt wird jede zeile neu berechnet, hashcat kann nur mit Salts umgehen wenn es der gleiche Salt für alle ist oder im Hash String selbst steckt (z. B. hash:salt).
 - komplexes formatting wie in Hex-Zeichen umwandeln oder rückwärts gelesen und dann erst gehasht
@@ -77,7 +80,7 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 
 <br>
 
-## Strategie wählen Beispiele
+## Strategie wählen (Trigger → Angriff)
 | Was du weißt | Strategie | Hashcat |
 |---|---|---|
 | kurze feste Struktur (PIN, „4 Ziffern“) | **Maske** | `-a3` |
