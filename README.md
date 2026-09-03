@@ -3,7 +3,7 @@
 ## Immer zuerst (3 Schritte)
 1. **Was ist es?** 
    
-   → Dateityp: `file` yourFile.encrypted / `xxd` yourFile.encrypted`|head -n 20` / `binwalk -E` yourFile.encrypted
+   → Dateityp: `file` yourFile.encrypted (-> z.b. openssl) / `xxd` yourFile.encrypted`|head -n 20` / `binwalk -E` yourFile.encrypted
    
    → Hashtyp raten: `hashid -m` "Hash" (Ausgabe z.b.: SHA-1 Hashcat Mode: 100) / `hashid -m` hash.txt / `hashid -mj` hash.txt (-j zeigt an ob der hash ein Salt verwendet)
 2. **Hash rausholen** → `*2john`-Tool (pdf2john, 7z2john, keepass2john, iwork2john, office2john…) 
