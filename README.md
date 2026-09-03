@@ -77,7 +77,7 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 
 <br>
 
-## Strategie wählen (Trigger → Angriff)
+## Strategie wählen Beispiele
 | Was du weißt | Strategie | Hashcat |
 |---|---|---|
 | kurze feste Struktur (PIN, „4 Ziffern“) | **Maske** | `-a3` |
