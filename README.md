@@ -12,7 +12,7 @@
 
    → für Hashcat oft Dateinamen-Präfix/Suffix (von John hinzugefüt) mit `sed` abschneiden: 
     - alles vor dem ersten $ abschneiden (funktioniert fast immer): `sed 's/^[^:]*://' hash_raw.txt > hash_hashcat.txt`
-    - explizit den Namen der Datei löschen: `sed 's/archive.7z://' hash_raw.txt > hash_hashcat.txt`
+    - explizit den Namen der Datei löschen: `sed 's/archive.7z://' hash_raw.txt > hash_hashcat.txt`, `sed -i 's/^prefix_here//; s/suffix_here$//' hashes.txt`
     - Suffixe am Ende entfernen (falls vorhanden): `sed 's/:[^:]*$//' hash_raw.txt > hash_hashcat.txt`
 
 3. **Kandidaten testen** → Hashcat / John / eigenes Skript
