@@ -95,6 +95,21 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 
 <br>
 
+Nutze primär John the Ripper bei:
+- LibreOffice / OpenDocument (.odt, .ods, .odp): Das Ausgabeformat von libreoffice2john macht bei Hashcat fast immer Token-Längen-Probleme.
+- SSH-Keys (id_rsa / ssh2john): Funktioniert mit John direkt ohne Formatierung.
+- GPG / PGP Keys (gpg2john): John liest die Extrakte nativ.
+- Java Keystores / Hashcodes (keystore2john): Werden von John reibungslos verarbeitet.
+- Immer, wenn Hashcat "Token length exception" meldet: Wenn Hashcat meckert, nimm sofort hash_raw.txt und John.
+
+Nutze primär Hashcat bei:
+- Standard-Hashes: Pure Hashes wie MD5, SHA256, NTLM oder Unix-Passwörter (/etc/shadow).
+- MS Office & PDF: .docx, .xlsx oder .pdf (Modi 9400–9600 und 10500 laufen stabil in Hashcat).
+- KeePass & 7-Zip: .kdbx (Modus 13400) und .7z (Modus 11600).
+- Masken-Angriffen (-a 3): Wenn du ein bestimmtes Muster testen musst (z. B. ?u?l?l?l?d?d?d), ist Hashcat unschlagbar schnell.
+
+<br>
+
 ## Strategie wählen (Trigger → Angriff)
 | Was du weißt | Strategie | Hashcat |
 |---|---|---|
