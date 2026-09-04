@@ -1,8 +1,15 @@
 # Passwortwiederherstellung
 
-> Auf Mac Rockyou.txt finden: find ~ -name "rockyou.txt"
+> **Mac Sachen finden**
+> Rockyou.txt: find ~ -name "rockyou.txt"
 > 
-> Hashcat rules finden: find / -name "best64.rule" 2>/dev/null
+> Hashcat rules: find / -name "best64.rule" 2>/dev/null
+>
+> 2john Befehle: find / -name "pdf2john*" 2>/dev/null, eventuell mit python aufrufen: python3 /pfad/zu/john/run/pdf2john.py datei.pdf > hash.txt
+>
+> Mac nutzt BSD sed während Kali GNU sed nutzt. -> -i geht nicht -> In neue Datei leiten: sed 's/^[^:]*://' hash_raw.txt > hash_sauber.txt
+>
+> oder wenn Prefix und Suffix zu entfernen sind: sed 's/^prefix_hier// ; s/suffix_hier$//' hash_raw.txt > hash_sauber.txt oder sed -e 's/^prefix_hier//' -e 's/suffix_hier$//' hash_raw.txt > hash_sauber.txt
 
 ## Immer zuerst (3 Schritte)
 1. **Was ist es?** 
