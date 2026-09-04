@@ -1,6 +1,7 @@
 # Passwortwiederherstellung
 
 > **Mac Sachen finden**
+> 
 > Rockyou.txt: find ~ -name "rockyou.txt"
 > 
 > Hashcat rules: find / -name "best64.rule" 2>/dev/null
