@@ -34,7 +34,7 @@
        - Standard Wörterbuch-Angriff: `hashcat -m [MODE] -a 0 hash_hashcat.txt /usr/share/wordlists/rockyou.txt`
        - Wörterbuch + Maske: `hashcat -m [MODE] -a 0 hash_hashcat.txt /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule`
        - Brute-Force (8-stellige Passwörter aus Kleinbuchstaben und Zahlen): `hashcat -m [MODE] -a 3 hash_hashcat.txt ?l?l?l?l?l?l?l?d`
-       - Fertig? `hashcat -m 11600 hash_clean.txt --show`
+       - Fertig? `hashcat -m [mode] hash_clean.txt --show`
    2. John the Ripper (kann die Datei nach den 2john Tools direkt lesen, kein sed nötig)
        - Standard Wörterbuch: `john --wordlist=/usr/share/wordlists/rockyou.txt hash_raw.txt`
        - Geknacktes Passwort anzeigen: `john --show hash_raw.txt`
