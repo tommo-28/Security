@@ -12,7 +12,7 @@
 >
 > oder wenn Prefix und Suffix zu entfernen sind: sed 's/^prefix_hier// ; s/suffix_hier$//' hash_raw.txt > hash_sauber.txt oder sed -e 's/^prefix_hier//' -e 's/suffix_hier$//' hash_raw.txt > hash_sauber.txt
 >
-> ohne den genauen dateinahmen anzugeben: sed -e 's/^[^:]*://' -e 's/:[^:]*$//' hash_raw.txt > hash_clean.txt
+> ohne den genauen dateinahmen anzugeben: sed -e 's/^[^:]*://' -e 's/:.*$//' hash_raw.txt > hash_clean.txt
 
 ## Immer zuerst (3 Schritte)
 1. **Was ist es?** 
