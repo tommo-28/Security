@@ -58,6 +58,7 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 | | **`1400`** | SHA-256 | Der moderne Standard für Standalone-Hashes, Bitcoins, TLS/SSL und viele Datei-Signaturen. |
 | | **`1800`** | sha512crypt | **Der Klassiker für Uni-Prüfungen:** Standard für moderne Linux `/etc/shadow`-Dateien. |
 | | **`3200`** | bcrypt | Für moderne Web-Anwendungen (z. B. PHP/Node.js). Extrem langsam (schwer zu cracken). |
+| | **`18600`** | .odt openDocument Dateien | In seltenen fällen eventuell auch die ältere Version 18600 |
 | **`-a`** (Angriff) | **`0`** | Straight (Wordlist) | Wenn du eine Passwortliste (z. B. `rockyou.txt`) hast und diese 1:1 durchtesten willst. |
 | | **`3`** | Mask (Brute-Force) | Wenn du keine Wortliste hast, aber das Muster kennst (z. B. „Immer 6 Kleinbuchstaben“ -> `?l?l?l?l?l?l`). |
 
