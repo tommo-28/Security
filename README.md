@@ -11,6 +11,8 @@
 > Mac nutzt BSD sed während Kali GNU sed nutzt. -> -i geht nicht -> In neue Datei leiten: sed 's/^[^:]*://' hash_raw.txt > hash_sauber.txt
 >
 > oder wenn Prefix und Suffix zu entfernen sind: sed 's/^prefix_hier// ; s/suffix_hier$//' hash_raw.txt > hash_sauber.txt oder sed -e 's/^prefix_hier//' -e 's/suffix_hier$//' hash_raw.txt > hash_sauber.txt
+>
+> ohne den genauen dateinahmen anzugeben: sed -e 's/^[^:]*://' -e 's/:[^:]*$//' hash_raw.txt > hash_clean.txt
 
 ## Immer zuerst (3 Schritte)
 1. **Was ist es?** 
@@ -20,7 +22,7 @@
    → Hashtyp raten: `hashid -m` "Hash" (Ausgabe z.b.: SHA-1 Hashcat Mode: 100) / `hashid -m` hash.txt / `hashid -mj` hash.txt (-j zeigt an ob der hash ein Salt verwendet)
 2. **Hash rausholen** → `*2john`-Tool (pdf2john, 7z2john, keepass2john, iwork2john, office2john…) 
 
-    e.g. pdf2john document.pdf > hash.txt / 7z2john archive.7z > hash.txt
+    e.g. pdf2john document.pdf > hash.txt / 7z2john archive.7z > hash.txt (libreoffice2john nicht odt2john!!)
 
    → für Hashcat oft Dateinamen-Präfix/Suffix (von John hinzugefüt) mit `sed` abschneiden: 
     - alles vor dem ersten $ abschneiden (funktioniert fast immer): `sed 's/^[^:]*://' hash_raw.txt > hash_hashcat.txt`
