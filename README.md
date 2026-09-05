@@ -48,7 +48,7 @@
 
 z.b. hashcat -m 100 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 
-Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
+Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m` / [hier nachsehen](https://hashcat.net/wiki/doku.php?id=hashcat)
 
 | Parameter | Modus / Wert | Name | Wann verwendest du diesen Modus? |
 | :--- | :--- | :--- | :--- |
