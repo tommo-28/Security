@@ -137,4 +137,11 @@ Nutze primär Hashcat bei:
 - „Kein Standardtool → kurzes Eigen-Skript ist schneller als lange Tool-Suche.“ ?? (ist dies erwünscht/erlaubt generieren zu lassen)??
 - Wenn's nicht klappt: **begründeter Weg reicht** — sagen, welches Vorwissen fehlt + was du als Nächstes probieren würdest.
 
+<br>
+
+**Salt vs Pepper**
+Salt ist in der Datenbank unverschlüsselt gespeichert und wird nur genutzt, damit Angreifer die Hashes nicht mit vorberechneten Hashes vergleichen können.
+
+Pepper wird genau wie der Salt mit in die Hashfunktion gegeben, wird allerdings im Gegensatz zum Salt nicht in der Datenbank gespeichert, sondern beispielsweise im geschützten TPM-Chip.
+
 ---
