@@ -140,6 +140,7 @@ Nutze primär Hashcat bei:
 <br>
 
 **Salt vs Pepper**
+
 Salt ist in der Datenbank unverschlüsselt gespeichert und wird nur genutzt, damit Angreifer die Hashes nicht mit vorberechneten Hashes vergleichen können.
 
 Pepper wird genau wie der Salt mit in die Hashfunktion gegeben, wird allerdings im Gegensatz zum Salt nicht in der Datenbank gespeichert, sondern beispielsweise im geschützten TPM-Chip.
