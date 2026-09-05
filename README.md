@@ -81,6 +81,7 @@ Hashcat `-m` finden, wie oben beschrieben, mit `hashid -m`.
 | **`--wordlist=[Pfad]`** | Wordlist Mode | Wenn du eine gezielte Wörterbuch-Attacke mit einer Datei fahren willst (äquivalent zu Hashcat `-a 0`). |
 | **`--incremental`** | Incremental Mode | Für einen intelligenten Brute-Force-Angriff. John testet Zeichenkombinationen basierend auf sprachlichen Wahrscheinlichkeiten (CPU-optimiert). Wie Hashcat `-a 3`, nur dass John kombinationen die oft in einer Sprache vorkommen priorisiert testet. |
 | **`--rules`** | Rules Mode | Wenn du Wörter aus einer Wortliste nach bestimmten Mustern verändern willst (z. B. "Hänge an jedes Wort ein Ausrufezeichen an"). |
+| **`--format`** | Format Mode | Wenn mann weiß dass format=raw-md5 ist, um die wordlist zu verkleinern. |
 
 ---
 
